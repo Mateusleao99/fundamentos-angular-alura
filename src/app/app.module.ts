@@ -1,9 +1,9 @@
+import { AppRoutingModule } from './app.routing.module';
 import { PhotosModule } from './photos/photos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 
 
 //COMPONENTE NÃO FUNCIONA SE NÃO TIVER NO NgModule
@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     PhotosModule,
-    HttpClientModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
