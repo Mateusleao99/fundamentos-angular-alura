@@ -1,3 +1,4 @@
+import { SignUpComponent } from './home/singup/signup.component';
 import { AuthGuard } from './core/auth/auth.guard';
 import { SignInComponent } from './home/signin/signin.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
@@ -13,6 +14,10 @@ const routes: Routes = [
     path: '',
     component: SignInComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
   },
   {
     path: 'user/:userName',
