@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './home/singup/signup.component';
 import { AuthGuard } from './core/auth/auth.guard';
 import { SignInComponent } from './home/signin/signin.component';
@@ -12,12 +13,18 @@ import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 const routes: Routes = [
   {
     path: '',
-    component: SignInComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'signup',
-    component: SignUpComponent,
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: SignInComponent,
+      },
+      {
+        path: 'signup',
+        component: SignUpComponent,
+      },
+    ]
   },
   {
     path: 'user/:userName',
@@ -38,7 +45,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot( routes)
+    RouterModule.forRoot( routes,{ useHash: true})
   ],
   exports: [
     RouterModule
