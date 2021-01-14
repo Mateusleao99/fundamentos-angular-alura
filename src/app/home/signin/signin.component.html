@@ -9,10 +9,6 @@
           class="form-control"
           placeholder="Nome "
           autofocus>
-          <ap-vmessage
-          *ngIf="loginForm.get('userName').errors?.required"
-          text="Campo nome obrigatorio!">
-          </ap-vmessage>
     </div>
 
     <div class="form-group">
@@ -21,11 +17,6 @@
           type="password"
           class="form-control"
           placeholder="Senha ">
-          <ap-vmessage
-          *ngIf="loginForm.get('password').errors?.required"
-          text="Compo senha obrigatorio!">
-          </ap-vmessage>
-
     </div>
 
     <button

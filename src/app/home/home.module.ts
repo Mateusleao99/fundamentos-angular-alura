@@ -1,3 +1,4 @@
+import { HomeRoutingModule } from './home.routing.module';
 import { HomeComponent } from './home.component';
 import { SignUpComponent } from './singup/signup.component';
 import { RouterModule } from '@angular/router';
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
       FormsModule,
       ReactiveFormsModule,
       VMessageModule,
-      RouterModule
+      RouterModule,
+      HomeRoutingModule
     ]
 })
 export class HomeModule { }

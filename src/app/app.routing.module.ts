@@ -1,7 +1,3 @@
-import { HomeComponent } from './home/home.component';
-import { SignUpComponent } from './home/singup/signup.component';
-import { AuthGuard } from './core/auth/auth.guard';
-import { SignInComponent } from './home/signin/signin.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
@@ -13,18 +9,13 @@ import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: '',
-        component: SignInComponent,
-      },
-      {
-        path: 'signup',
-        component: SignUpComponent,
-      },
-    ]
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
+  {
+    path: 'home',
+    //Em loadChildren, solicitaremos que se carregue o módulo sob demanda
+    loadChildren: './home/home.module#HomeModule'
   },
   {
     path: 'user/:userName',
