@@ -1,3 +1,4 @@
+import { SignUpService } from './singup/signup.service';
 import { HomeRoutingModule } from './home.routing.module';
 import { HomeComponent } from './home.component';
 import { SignUpComponent } from './singup/signup.component';
@@ -21,6 +22,9 @@ import { CommonModule } from '@angular/common';
       VMessageModule,
       RouterModule,
       HomeRoutingModule
+    ],
+    providers: [
+      SignUpService
     ]
 })
 export class HomeModule { }

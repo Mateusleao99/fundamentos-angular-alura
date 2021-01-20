@@ -9,7 +9,8 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { LowerCaseValidator } from 'src/app/shared/validators/lower-case.validator';
 
 @Component({
-  templateUrl:'./signup.componets.html'
+  templateUrl:'./signup.componets.html',
+  providers: [ UserNotTakenValidatorService ]
 })
 
 export class SignUpComponent implements OnInit{
